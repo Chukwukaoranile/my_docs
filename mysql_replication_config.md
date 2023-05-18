@@ -26,7 +26,7 @@
     FLUSH PRIVILEGES;
 
 #### Hosting MySQL primary on web-01 (do not use the bind-address) just comment out this parameter
-### a. Open the MySQL configuration file using a text editor
+## a. Open the MySQL configuration file using a text editor
 
     sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 
@@ -44,7 +44,7 @@
 
     sudo service mysql restart
 
-### b.  MySQL Replica Configuration (web-02):
+## b.  MySQL Replica Configuration (web-02):
 ##### Open the MySQL configuration file using a text editor:
 
     sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
@@ -67,7 +67,7 @@
 
 	sudo service mysql restart
 
-##### c. Create a replication user on the primary server (web-01):
+## c. Create a replication user on the primary server (web-01):
 ###### Connect to the MySQL server on web-01 as the root user:
 
 	mysql -u root -p
@@ -83,14 +83,14 @@
 
 ##### Replace web-02-IP-address with the IP address of web-02 and 'your_password' with a password of your choice.
 
-#### d. Retrieve the primary's binary log file position:
+## d. Retrieve the primary's binary log file position:
 ##### Still on the MySQL server on web-01, execute the following command to obtain the binary log file position:
 
 	SHOW MASTER STATUS;
 
 #### Take note of the values displayed for File and Position, as they will be needed during the replication setup.
 
-#### e. Set up replication on the replica server (web-02):
+## e. Set up replication on the replica server (web-02):
 ##### Connect to the MySQL server on web-02 as the root user:
 
 	mysql -u root -p
@@ -113,14 +113,14 @@ Enter the root password when prompted.
 
 ##### Check the value of Slave_IO_Running and Slave_SQL_Running in the output. If both are set to Yes, replication is functioning properly.
 
-#### f. Provide the MySQL primary configuration file as "4-mysql_configuration_primary":
+## f. Provide the MySQL primary configuration file as "4-mysql_configuration_primary":
 ##### On web-01, execute the following command to copy the configuration file to a new location:
 
 	sudo cp /etc/mysql/mysql.conf.d/mysqld.cnf ~/4-mysql_configuration_primary
 
 ##### This will create a copy of the primary MySQL configuration file in your home directory with the name "4-mysql_configuration_primary".
 
-#### g. Provide the MySQL replica configuration file as "4-mysql_configuration_replica":
+## g. Provide the MySQL replica configuration file as "4-mysql_configuration_replica":
 ##### On web-02, execute the following command to copy the configuration file to a new location:
 
 	sudo cp /etc/mysql/mysql.conf.d/mysqld.cnf ~/4-mysql_configuration_replica
