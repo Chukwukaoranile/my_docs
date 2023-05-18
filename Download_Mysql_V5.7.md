@@ -44,4 +44,5 @@
 
 ##### login into mysql server
 
-sudo mysql -u root -p
+	sudo mysql -u root -p
+
