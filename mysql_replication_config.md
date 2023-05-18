@@ -128,3 +128,16 @@ Enter the root password when prompted.
 #### This will create a copy of the replica MySQL configuration file in your home directory with the name "4-mysql_configuration_replica".
 
 ###### Please note that it's essential to replace web-01-IP-address, web-02-IP-address, 'your_password',filename_from_step_4, and position_from_step_4 with the appropriate values specific to your environment.
+
+## Creating backup and compressing same in an archive file
+#### create a bash file and add the follwing commands. Save and make the file executable
+#!/usr/bin/env bash
+# backup and compress my databases
+
+	mysqldump --all-databases -u root --password="$1" > backup.sql
+	day=$(date +"%d")
+	month=$(date +"%m")
+	year=$(date +"%Y")
+	file_name="$day-$month-$year.tar.gz"
+	tar -czvf "$file_name" backup.sql
+
