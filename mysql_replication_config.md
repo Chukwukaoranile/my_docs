@@ -131,9 +131,8 @@ Enter the root password when prompted.
 
 ## Creating backup and compressing same in an archive file
 #### create a bash file and add the follwing commands. Save and make the file executable
-#!/usr/bin/env bash
-# backup and compress my databases
-
+	#!/usr/bin/env bash
+	# backup and compress my databases
 	mysqldump --all-databases -u root --password="$1" > backup.sql
 	day=$(date +"%d")
 	month=$(date +"%m")
