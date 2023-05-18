@@ -1,17 +1,23 @@
 
-# CREATE DATABASE tyrell_corp;
+CREATE DATABASE tyrell_corp;
 
-# USE tyrell_corp;
+USE tyrell_corp;
 
-# CREATE TABLE nexus6 (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
-** GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';
-** FLUSH PRIVILEGES;  
+CREATE TABLE nexus6 (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
 
-_Creating a new user for the replica server.
-**CREATE USER 'replica_user'@'%' IDENTIFIED BY 'projectcorrection280hbtn';
-__granting appropriate permissions to replicate your primary MySQL server.
-**GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
-__granting holberton_user SELECT privileges on the mysql.user 
+GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';
+
+FLUSH PRIVILEGES;  
+
+** Creating a new user for the replica server.**
+
+CREATE USER 'replica_user'@'%' IDENTIFIED BY 'projectcorrection280hbtn';
+
+__ Granting appropriate permissions to replicate your primary MySQL server.
+
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+
+__ Granting holberton_user SELECT privileges on the mysql.user 
 __Table in order to check that replica_user was created with the correct permissions.
 **GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
 **FLUSH PRIVILEGES;
