@@ -1,4 +1,4 @@
-# How to configure Mysql Database and create Replica
+# How to configure Mysql Database, create Replication
 #### Creating database
 
     CREATE DATABASE tyrell_corp;
@@ -33,9 +33,9 @@
 #### Locate the bind-address parameter and comment it out by adding a "#" at the beginning of the line:
 ##### #bind-address            = 127.0.0.1
 ##### Scroll down to the [mysqld] section and add the following lines to configure the replication settings:
-    > server-id                = 1
-    > log_bin                  = /var/log/mysql/mysql-bin.log
-    > binlog_do_db             = tyrell_corp
+    server-id                = 1
+    log_bin                  = /var/log/mysql/mysql-bin.log
+    binlog_do_db             = tyrell_corp
 
 #### Save the file and exit the text editor.
 
@@ -53,14 +53,16 @@
 ##### Replace web-02-IP-address with the actual IP address of web-02.
 
 Scroll down to the [mysqld] section and add the following lines to configure the replication settings:
-	server-id                = 2
+    server-id                = 2
 	relay-log                = /var/log/mysql/mysql-relay-bin.log
 	log_bin                  = /var/log/mysql/mysql-bin.log
 	binlog_do_db             = tyrell_corp
 Save the file and exit the text editor.	
 
 Restart the MySQL service to apply the changes:
+
 	sudo service mysql restart
+
 c. Create a replication user on the primary server (web-01):
 Connect to the MySQL server on web-01 as the root user:
 	mysql -u root -p
