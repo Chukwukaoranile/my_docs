@@ -1,15 +1,15 @@
 
-CREATE DATABASE tyrell_corp;
+    CREATE DATABASE tyrell_corp;
 
-USE tyrell_corp;
+    USE tyrell_corp;
 
-CREATE TABLE nexus6 (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
+    CREATE TABLE nexus6 (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
 
-GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';
+    GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';
 
-FLUSH PRIVILEGES;  
+    FLUSH PRIVILEGES;
 
-** Creating a new user for the replica server.**
+== Creating a new user for the replica server.==
 
 CREATE USER 'replica_user'@'%' IDENTIFIED BY 'projectcorrection280hbtn';
 
