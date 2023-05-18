@@ -1,26 +1,26 @@
-## CREATE DATABASE tyrell_corp;
-USE tyrell_corp;
-# CREATE TABLE nexus6 (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
-GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';
-FLUSH PRIVILEGES;  
+**CREATE DATABASE tyrell_corp;
+**USE tyrell_corp;
+**CREATE TABLE nexus6 (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
+**GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';
+**FLUSH PRIVILEGES;  
 
--- Creating a new user for the replica server.
-# CREATE USER 'replica_user'@'%' IDENTIFIED BY 'projectcorrection280hbtn';
--- granting appropriate permissions to replicate your primary MySQL server.
-GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
--- granting holberton_user SELECT privileges on the mysql.user 
--- table in order to check that replica_user was created with the correct permissions.
-GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
-FLUSH PRIVILEGES;
+_Creating a new user for the replica server.
+**CREATE USER 'replica_user'@'%' IDENTIFIED BY 'projectcorrection280hbtn';
+__granting appropriate permissions to replicate your primary MySQL server.
+**GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+__granting holberton_user SELECT privileges on the mysql.user 
+__Table in order to check that replica_user was created with the correct permissions.
+**GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+**FLUSH PRIVILEGES;
 
--- Hosting MySQL primary on web-01 (do not use the bind-address) just comment out this parameter
-a. Open the MySQL configuration file using a text editor:
-# sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+__Hosting MySQL primary on web-01 (do not use the bind-address) just comment out this parameter
+a.==Open the MySQL configuration file using a text editor==
+**sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 Locate the bind-address parameter and comment it out by adding a "#" at the beginning of the line:
-	#bind-address            = 127.0.0.1
+**#bind-address            = 127.0.0.1
 Scroll down to the [mysqld] section and add the following lines to configure the replication settings:
-	server-id                = 1
-	log_bin                  = /var/log/mysql/mysql-bin.log
+server-id                = 1
+<F11>	log_bin                  = /var/log/mysql/mysql-bin.log
 	binlog_do_db             = tyrell_corp
 Save the file and exit the text editor.
 
@@ -62,7 +62,8 @@ Still on the MySQL server on web-01, execute the following command to obtain the
 Take note of the values displayed for File and Position, as they will be needed during the replication setup.
 
 e. Set up replication on the replica server (web-02):
-Connect to the MySQL server on web-02 as the root user:
+**Connect to the MySQL server on web-02 as the root user:
+
 	mysql -u root -p
 Enter the root password when prompted.
 
@@ -76,6 +77,7 @@ Start the replication process:
 
 	START SLAVE;
 Verify that replication is running without errors:
+
 	SHOW SLAVE STATUS\G
 Check the value of Slave_IO_Running and Slave_SQL_Running in the output. If both are set to Yes, 
 replication is functioning properly.
@@ -92,8 +94,8 @@ On web-02, execute the following command to copy the configuration file to a new
 This will create a copy of the replica MySQL configuration file in your home directory with 
 the name "4-mysql_configuration_replica".
 
-Please note that it's essential to replace web-01-IP-address, web-02-IP-address, 'your_password', 
-filename_from_step_4, and position_from_step_4 with the appropriate values specific to your environment.
+**Please note that it's essential to replace web-01-IP-address, web-02-IP-address, 'your_password', 
+filename_from_step_4, and position_from_step_4 with the appropriate values specific to your environment.**
 
 
 
