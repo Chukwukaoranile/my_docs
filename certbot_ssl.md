@@ -1,4 +1,4 @@
-# How to Install Haproxy
+# How to Install Haproxy (Load Blancer) and certbot HTTPS/SSL (Lets Encrypt)
 ### Create a bash script and place the following commands in it
 	#!usr/bin/env bash
 	# Install and configure Haproxy
@@ -16,8 +16,8 @@
 		server serverName2 IP_Address:80
 	"" >> /etc/haproxy/haproxy.cfg
 	service haproxy reload
-### NB The above commands should be in a bash file, i.e. (.sh) and should be executable
-#### Run the ==.sh== file with ==sudo== . eg. sudo ./install_haproxy.sh
+##### NB The above commands should be in a bash file, i.e. (.sh) and should be executable
+#### Run the .sh file with sudo . eg. sudo ./install_haproxy.sh
 
 ### Install certbot for HTTPS/SSL Certificate
 ##### Installing packages
@@ -52,7 +52,7 @@
 
 	backend mybackend
 		balance roundrobin
-		http-request redirect scheme https code unless { ssl_fc }
+		http-request redirect scheme https unless { ssl_fc }
 		server serverName1 IP_Address:80 check
         	server serverName1 IP_Address:80 check
 
