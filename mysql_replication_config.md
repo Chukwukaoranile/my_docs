@@ -1,4 +1,6 @@
 # How to configure Mysql Database and create Replica
+#### Creating database
+
     CREATE DATABASE tyrell_corp;
 
     USE tyrell_corp;
@@ -9,41 +11,46 @@
 
     FLUSH PRIVILEGES;
 
-== Creating a new user for the replica server.==
+#### Creating a new user for the replica server.==
 
     CREATE USER 'replica_user'@'%' IDENTIFIED BY 'projectcorrection280hbtn';
 
-### Granting appropriate permissions to replicate your primary MySQL server.
+#### Granting appropriate permissions to replicate your primary MySQL server.
 
     GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
 
-### Granting holberton_user SELECT privileges on the mysql.user 
-__Table in order to check that replica_user was created with the correct permissions.
+#### Granting holberton_user SELECT privileges on the mysql.user Table in order to check that replica_user was created with the correct permissions.
 
     GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
 
     FLUSH PRIVILEGES;
 
-__Hosting MySQL primary on web-01 (do not use the bind-address) just comment out this parameter
-a.==Open the MySQL configuration file using a text editor==
-**sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
-Locate the bind-address parameter and comment it out by adding a "#" at the beginning of the line:
-**#bind-address            = 127.0.0.1
-Scroll down to the [mysqld] section and add the following lines to configure the replication settings:
-server-id                = 1
-<F11>	log_bin                  = /var/log/mysql/mysql-bin.log
-	binlog_do_db             = tyrell_corp
-Save the file and exit the text editor.
+#### Hosting MySQL primary on web-01 (do not use the bind-address) just comment out this parameter
+### a. Open the MySQL configuration file using a text editor
 
-Restart the MySQL service to apply the changes:
-#	sudo service mysql restart
+    sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 
-b.  MySQL Replica Configuration (web-02):
-Open the MySQL configuration file using a text editor:
-	sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
-Locate the bind-address parameter and set it to the IP address of web-02:
-	bind-address            = web-02-IP-address
-Replace web-02-IP-address with the actual IP address of web-02.
+#### Locate the bind-address parameter and comment it out by adding a "#" at the beginning of the line:
+##### #bind-address            = 127.0.0.1
+##### Scroll down to the [mysqld] section and add the following lines to configure the replication settings:
+    > server-id                = 1
+    > log_bin                  = /var/log/mysql/mysql-bin.log
+    > binlog_do_db             = tyrell_corp
+
+#### Save the file and exit the text editor.
+
+#### Restart the MySQL service to apply the changes:
+
+    sudo service mysql restart
+
+### b.  MySQL Replica Configuration (web-02):
+##### Open the MySQL configuration file using a text editor:
+
+    sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+
+#### Locate the bind-address parameter and set it to the IP address of web-02:
+	#bind-address            = web-02-IP-address
+##### Replace web-02-IP-address with the actual IP address of web-02.
 
 Scroll down to the [mysqld] section and add the following lines to configure the replication settings:
 	server-id                = 2
