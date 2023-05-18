@@ -1,5 +1,5 @@
 # How to configure Mysql Database, create Replication
-#### Creating database
+### Creating database
 
     CREATE DATABASE tyrell_corp;
 
@@ -11,21 +11,21 @@
 
     FLUSH PRIVILEGES;
 
-#### Creating a new user for the replica server.==
+### Creating a new user for the replica server.==
 
     CREATE USER 'replica_user'@'%' IDENTIFIED BY 'projectcorrection280hbtn';
 
-#### Granting appropriate permissions to replicate your primary MySQL server.
+### Granting appropriate permissions to replicate your primary MySQL server.
 
     GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
 
-#### Granting holberton_user SELECT privileges on the mysql.user Table in order to check that replica_user was created with the correct permissions.
+### Granting holberton_user SELECT privileges on the mysql.user Table in order to check that replica_user was created with the correct permissions.
 
     GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
 
     FLUSH PRIVILEGES;
 
-#### Hosting MySQL primary on web-01 (do not use the bind-address) just comment out this parameter
+### Hosting MySQL primary on web-01 (do not use the bind-address) just comment out this parameter
 ## a. Open the MySQL configuration file using a text editor
 
     sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
