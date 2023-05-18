@@ -30,7 +30,7 @@
 
 	sudo apt-cache policy mysql-server
 
-###### Select bionic and choose version 5.7, then select OK
+#### Select bionic and choose version 5.7, then select OK
 
 	sudo apt update
 
@@ -38,8 +38,10 @@
 
 	sudo apt install -f mysql-client=5.7* mysql-community-server=5.7* mysql-server=5.7*
 
+##### Restart Your server
+
+	sudo systemctl status mysql
+
 ##### login into mysql server
 
-	sudo mysql -u root -p
-
-	sudo systemctl status mysql
+sudo mysql -u root -p
