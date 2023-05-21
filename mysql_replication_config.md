@@ -5,7 +5,7 @@
 
     USE tyrell_corp;
 
-    CREATE TABLE nexus6 (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
+    CREATE TABLE  (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
 
     GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';
 
@@ -113,21 +113,24 @@ Enter the root password when prompted.
 
 ##### Check the value of Slave_IO_Running and Slave_SQL_Running in the output. If both are set to Yes, replication is functioning properly.
 
-## f. Provide the MySQL primary configuration file as "4-mysql_configuration_primary":
+__ At this juncture the slave and master is functioning propery __
+
+###### Please note that it's essential to replace web-01-IP-address, web-02-IP-address, 'your_password',filename_from_step_4, and position_from_step_4 with the appropriate values specific to your environment.
+
+## f. Copy the primary configuration file to "4-mysql_configuration_primary":
 ##### On web-01, execute the following command to copy the configuration file to a new location:
 
 	sudo cp /etc/mysql/mysql.conf.d/mysqld.cnf ~/4-mysql_configuration_primary
 
 ##### This will create a copy of the primary MySQL configuration file in your home directory with the name "4-mysql_configuration_primary".
 
-## g. Provide the MySQL replica configuration file as "4-mysql_configuration_replica":
+## g. Copy  the MySQL replica configuration file to "4-mysql_configuration_replica":
 ##### On web-02, execute the following command to copy the configuration file to a new location:
 
 	sudo cp /etc/mysql/mysql.conf.d/mysqld.cnf ~/4-mysql_configuration_replica
 
 #### This will create a copy of the replica MySQL configuration file in your home directory with the name "4-mysql_configuration_replica".
 
-###### Please note that it's essential to replace web-01-IP-address, web-02-IP-address, 'your_password',filename_from_step_4, and position_from_step_4 with the appropriate values specific to your environment.
 
 ## Creating backup and compressing same in an archive file
 #### create a bash file and add the follwing commands. Save and make the file executable
@@ -139,4 +142,3 @@ Enter the root password when prompted.
 	year=$(date +"%Y")
 	file_name="$day-$month-$year.tar.gz"
 	tar -czvf "$file_name" backup.sql
-
