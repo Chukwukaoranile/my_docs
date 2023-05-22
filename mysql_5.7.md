@@ -1,4 +1,4 @@
-## [How to] Install mysql 5.7
+## How to Install mysql 5.7***
 Copy the key here to your clipboard
 [Click to copy the signature key](https://dev.mysql.com/doc/refman/5.7/en/checking-gpg-signature.html)
 
