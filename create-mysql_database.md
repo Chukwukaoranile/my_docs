@@ -8,9 +8,10 @@
 	USE database_name;
 
 -- Create the table
-```CREATE TABLE table_name (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(255)
+```
+CREATE TABLE table_name (
+id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(255)
 );
 ```
 -- Insert a row into the table
