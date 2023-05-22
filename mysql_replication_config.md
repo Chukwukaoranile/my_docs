@@ -113,7 +113,7 @@ Enter the root password when prompted.
 
 ##### Check the value of Slave_IO_Running and Slave_SQL_Running in the output. If both are set to Yes, replication is functioning properly.
 
-__ At this juncture the slave and master is functioning propery __
+**At this juncture the slave and master is functioning properly**
 
 ###### Please note that it's essential to replace web-01-IP-address, web-02-IP-address, 'your_password',filename_from_step_4, and position_from_step_4 with the appropriate values specific to your environment.
 
