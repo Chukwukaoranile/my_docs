@@ -1,6 +1,5 @@
 
 ### Alias provides the opportunity to create short cut for frequently used CLI commands
-___
 
 To achieve this, open the file below and add the following configurations
 
