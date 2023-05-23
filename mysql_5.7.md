@@ -15,8 +15,8 @@ update apt
 	sudo apt-get update
 
 now check your available versions:
-
-```vagrant@ubuntu-focal:/vagrant$ sudo apt-cache policy mysql-server
+```
+vagrant@ubuntu-focal:/vagrant$ sudo apt-cache policy mysql-server
 mysql-server:
   Installed: (none)
   Candidate: 8.0.27-0ubuntu0.20.04.1
