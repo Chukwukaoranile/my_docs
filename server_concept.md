@@ -4,7 +4,7 @@ Servers are located in datacenters which are buildings that host hundreds, or ev
 
 Read:
 
-* [What is a server](https://en.wikipedia.org/wiki/Server_(computing)
+* [What is a server](https://en.wikipedia.org/wiki/Server_(computing))
 
 ### Watch:
 * [![What is a server?](https://img.youtube.com/vi/B1ANfsDyjeA/0.jpg)](https://www.youtube.com/watch?v=B1ANfsDyjeA)
