@@ -22,6 +22,6 @@ At this point check if the directory is in the required branch
 
 * After executing the command, Git will copy the specified directory and its contents from the master branch to your current branch.
 
-### Please note that this process only copies the directory and its contents. If you want to merge the changes made in the copied directory on the master branch into your current branch, you will need to perform a separate merge operation.
+**Please note that this process only copies the directory and its contents. If you want to merge the changes made in the copied directory on the master branch into your current branch, you will need to perform a separate merge operation.**
 
 
