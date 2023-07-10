@@ -1,8 +1,8 @@
 # How to copy git directory from master to  branch
 
-To copy a Git directory from the master branch to another branch, you can follow these steps:
+# To copy a Git directory from the master branch to another branch, you can follow these steps:
 
-* Ensure you are currently on the branch where you want to copy the directory to. If you need to create a new branch, you can use the following command, replacing <branch_name> with the desired branch name:
+* Ensure you are currently on the branch where you want to copy the directory to. If you need to create a new branch, you can use the following command, replacing <branch_name> with the desired branch name:<br>
 
 	git checkout -b <branch_name>
 
