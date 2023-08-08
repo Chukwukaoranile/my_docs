@@ -66,9 +66,16 @@ LxssManager is the Linux Instance Lifecycle Service that runs in the background.
 2. Type services.msc to open Windows Services.
 
 3. Locate LxssManager Service. Select it and click on the Restart link on the left.
-4. Relaunch the Linux terminal and check if the error is fixed.
+4. Relaunch the Linux terminal and check if the error is fixed.	
 
 # Your Ubuntu should be working fine at this point if you have download before following the steps above. Continue with subsequent steps if you are yet to download ubuntu LTS 
+
+Run
+
+	wsl --install
+or
+
+	wsl.exe --install
 
 ## Fix 4 – Launch the Subsystem from Store
  
