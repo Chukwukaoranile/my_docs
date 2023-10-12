@@ -66,8 +66,13 @@ If you have any questions or feedback, feel free to reach out to:
 
 ### **Achebe, Chika Luke** 
 
-- Email: [Send me an email](mailto:prosperbinary@gmail.com)
-- GitHub: [Check out my GitHub](https://github.com/Chukwukaoranile)
-- LinkedIn: [Connect on LinkedIn](https://www.linkedin.com/in/chika-luke-achebe-b32b87bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+- Email: [:email: Send me an email](mailto:prosperbinary@gmail.com)
+- GitHub: [:octocat: Check out my GitHub](https://github.com/Chukwukaoranile)
+- LinkedIn: [:link: Connect on LinkedIn](https://www.linkedin.com/in/chika-luke-achebe-b32b87bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 
+
+
+[:email:]: https://raw.githubusercontent.com/github/explore/main/topics/email/email.png
+[:octocat:]: https://raw.githubusercontent.com/github/explore/main/topics/octocat/octocat.png
+[:link:]: https://raw.githubusercontent.com/github/explore/main/topics/linkedin/linkedin.png
