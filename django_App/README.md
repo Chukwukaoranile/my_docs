@@ -3,18 +3,18 @@ ___
 
 ## **Content**
 
-- [Project Overview](#Project Overview)
-- [Project Structure](#Project Structure)
+- [Project Overview](#Project-Overview)
+- [Project Structure](#Project-Structure)
 - [Installation](#Installation)
 - [Contributing](#Contributing)
 - [Contact](#contact)
 
-## Project Overview
+## Project-Overview
 
 This project aimed at getting you familiar with the basic structure of the development of the Capacity Exchange platform. This README provides an overview of the project structure, setup instructions, and other important information.
 
 
-## Project Structure
+## Project-Structure
 
 The project follows a standard Django structure with the following main directories:
 
@@ -25,29 +25,29 @@ The project follows a standard Django structure with the following main director
 
 To run this project locally, follow these steps:
 
-1. Clone this repository to your local machine:
+**Step 1. Clone this repository to your local machine:**
 
 	git clone https://github.com/Chukwukaoranile/myproject.git
 
-2. Navigate to the project directory:
+**Step 2. Navigate to the project directory:**
 
 	cd myproject
 
-3. Install project dependencies using `pipenv`:
+**Step 3. Install project dependencies using `pipenv`:**
 
 	pipenv install <package-name>
 
 _See the requirements.txt file for packages and thier versions_
 
-4. Create a virtual environment and activate it (if not already done by `pipenv`):
+**Step 4. Create a virtual environment and activate it (if not already done by `pipenv`):**
 
 	pipenv shell
 
-5. Run the development server:
+**Step 5. Run the development server:**
 
 	python manage.py runserver
 
-7. Access the project in your web browser at http://localhost:8000.
+**Step 7. Access the project in your web browser at http://localhost:8000.**
 
 ## Contributing
 
