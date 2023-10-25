@@ -1,4 +1,4 @@
-#Project Description
+# Project Description
 Assist Capacity Exchange Development
 
 The Capacity Exchange (CapX) is a project developing a sociotechnical platform for peer-to-peer connection and knowledge sharing towards sustainable, community-based capacity-building within the Wikimedia Movement. It intends to deliver an interactive, online platform, backed by a database, which will allow wikimedians to: publish information about themselves, their affiliates, and informal groups; conduct searches and access information published by others; connect with peers for knowledge exchange. The platform is intended to be responsive, intuitive, and accessible to all wikimedia users.
